@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { rarities } from '../utils/constants'
-import { Button, VariantStrings } from '../components/Button'
+import { Button } from '../components/Button'
 
 const Home: NextPage = () => {
 
@@ -12,7 +12,7 @@ const Home: NextPage = () => {
       </div>
       <div className='flex gap-4'>
         {rarities.map((rarity, index) => (
-          <Button variant={rarity as VariantStrings} key={index}>{rarity}</Button>
+          <Button variant={rarity} key={index}>{rarity}</Button>
         ))}
       </div>
     </div>

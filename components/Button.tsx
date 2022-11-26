@@ -1,13 +1,5 @@
 import React from 'react'
-enum Variant  {
-    Common = 'Common',
-    Rare = 'Rare', 
-    Epic = 'Epic',
-    Legendary = 'Legendary', 
-    Champion = 'Champion'
-}
-
-export type VariantStrings = keyof typeof Variant;
+import { Variant, VariantStrings } from '../utils/constants';
 
 export const Button = ({ children, variant }: { children: React.ReactNode; variant: VariantStrings;  }) => {
     const colors = {
