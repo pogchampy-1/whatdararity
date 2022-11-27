@@ -44,7 +44,7 @@ const Home: NextPage = () => {
       <div className='text-2xl text-center'>What rarity is this card?</div>
       <div className="border rounded p-8 max-w-2xl items-center">
         <div className="w-64 h-64 flex flex-col">
-          <Image src={`https://royaleapi.github.io/cr-api-assets/cards/${card.key}.png`} alt={card?.name} className='w-full h-full' />
+          <img src={`https://royaleapi.github.io/cr-api-assets/cards/${card.key}.png`} alt={card?.name} className='w-full h-full' />
           <div className='text-xl text-center'>{card.name}</div>
         </div>
       </div>
