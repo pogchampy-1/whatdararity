@@ -3,6 +3,7 @@ import { GameStatus, ICard, rarities, VariantStrings } from '../utils/constants'
 import { Button } from '../components/Button'
 import { getRandomCard } from '../utils/getRandomCard'
 import React, { useEffect } from 'react'
+import Image from 'next/image'
 
 const Home: NextPage = () => {
   const [card, setCard] = React.useState<ICard | undefined>(undefined);
@@ -36,15 +37,15 @@ const Home: NextPage = () => {
     }, 500);
   }
 
-  if (!card) return <div>Loading data...</div>
+  if (!card || card == undefined) return <div>Loading data...</div>
 
   return (
     <div className='h-screen w-screen flex flex-col justify-center items-center gap-6'>
       <div className='text-2xl text-center'>What rarity is this card?</div>
       <div className="border rounded p-8 max-w-2xl items-center">
         <div className="w-64 h-64 flex flex-col">
-          <img src={`https://royaleapi.github.io/cr-api-assets/cards/${card?.key}.png`} alt={card?.name} className='w-full h-full' />
-          <div className='text-xl text-center'>{card?.name}</div>
+          <Image src={`https://royaleapi.github.io/cr-api-assets/cards/${card.key}.png`} alt={card?.name} className='w-full h-full' />
+          <div className='text-xl text-center'>{card.name}</div>
         </div>
       </div>
       <div className='flex gap-4'>
