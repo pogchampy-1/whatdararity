@@ -1,7 +1,7 @@
 import React from 'react'
 import { Variant, VariantStrings } from '../utils/constants';
 
-export const Button = ({ children, variant }: { children: React.ReactNode; variant: VariantStrings;  }) => {
+export const Button = ({ children, variant, handleSubmission }: { children: React.ReactNode; variant: VariantStrings; handleSubmission: (rarity: VariantStrings) => void; }) => {
     const colors = {
         [Variant.Common]: 'bg-gray-500 text-black px-4 py-2 rounded hover:bg-gray-400',
         [Variant.Rare]: 'bg-orange-500 text-black px-4 py-2 rounded hover:bg-orange-400',
@@ -10,6 +10,6 @@ export const Button = ({ children, variant }: { children: React.ReactNode; varia
         [Variant.Champion]: 'bg-red-500 text-black px-4 py-2 rounded hover:bg-red-400',
     }
     return (
-    <button className={`${colors[variant]}`}>{children}</button>
+    <button type='submit' onClick={() => handleSubmission(variant)} className={`${colors[variant]}`}>{children}</button>
   )
 }

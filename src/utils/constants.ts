@@ -1,5 +1,3 @@
-import { ClashRoyaleAPI } from "@varandas/clash-royale-api";
-
 export enum Variant  {
     Common = 'Common',
     Rare = 'Rare', 
@@ -14,6 +12,21 @@ export const rarities: VariantStrings[] = [
     'Common', 'Rare', 'Epic', 'Legendary', 'Champion' 
 ]
 
-export const api = new ClashRoyaleAPI(process.env.API_KEY!);
+export enum GameStatus {
+    Correct, 
+    Wrong
+}
+
+export type ICard = {
+    key: string;
+    name: string;
+    sc_key: string;
+    elixir: string;
+    type: string;
+    rarity: VariantStrings;
+    arena: number;
+    description: string;
+    id: number;
+}
 
 export const TOTAL_CARDS = 109;
